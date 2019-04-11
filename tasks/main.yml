@@ -16,5 +16,5 @@
     name: "{{ docker_user }}"
     group: docker
   when:
-    - docker_group is defined 
+    - docker_group
     - docker_group.state == "present"
