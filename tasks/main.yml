@@ -1,6 +1,6 @@
 ---
 - name: Ensure group docker exists
-  group: 
+  group:
     name: docker
     state: present
   register: docker_group
@@ -10,9 +10,9 @@
   with_first_found:
     - "{{ ansible_distribution }}.yml"
     - default.yml
- 
+
 - name: Add user to docker group
-  user: 
-    name: "{{docker_user}}" 
+  user:
+    name: "{{docker_user}}"
     group: docker
   when: docker_group.state == "present"
