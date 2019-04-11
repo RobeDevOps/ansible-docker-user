@@ -5,7 +5,9 @@ This playbooks adds the AWS EC2 ssh user to docker group. (if group does not exi
 
 Requirements
 ===============
-For Ubuntu 18-04 LTS - Bionic, python needs to be installed before start using ansible.
+For the ubuntu distributions python needs to be installed before start using ansible
+* Ubuntu 18-04 LTS - Bionic 
+* Ubuntu 16-04 LTS - Xenial
 
 ```
 apt install python -y
