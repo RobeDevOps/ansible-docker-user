@@ -1,6 +1,6 @@
 galaxy_info:
   author: Roberto Cardenas Isla
-  description: It playbook the docker_user user to the docker group.
+  description: It playbook adds the AWS EC2 user to the docker group.
   company: Own project
 
   license: BSD
