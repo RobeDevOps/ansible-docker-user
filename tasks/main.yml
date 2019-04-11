@@ -3,7 +3,6 @@
   group:
     name: docker
     state: present
-  register: docker_group
 
 - name: Load user based on OS
   include_vars: "{{ item }}"
@@ -15,4 +14,3 @@
   user:
     name: "{{ docker_user }}"
     group: docker
-  when: docker_group.state == "present"
