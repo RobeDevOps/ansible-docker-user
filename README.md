@@ -1,10 +1,6 @@
-# docker_user
-
-This playbooks adds the AWS EC2 ssh user to docker group. (if group does not existes it creates the docker group)
-
-
 Requirements
-===============
+------------
+
 For the ubuntu distributions python needs to be installed before start using ansible
 * Ubuntu 18-04 LTS - Bionic 
 * Ubuntu 16-04 LTS - Xenial
@@ -13,8 +9,51 @@ For the ubuntu distributions python needs to be installed before start using ans
 apt install python -y
 ```
 
-See example below for CentOS.
-==========
+Role Variables
+--------------
+User defined on variables based on AWS EC2 ssh user. System load the user automatically based on ansible_distribution facts  
+
+```
+# for AWS EC2 centos
+docker_user: centos
+```
+
+```
+# for AWS EC2 amazon
+docker_user: ec2-user
+```
+
+```
+# for AWS EC2 ubuntu
+docker_user: ubuntu
+```
+
+Example Playbook
+----------------
+
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+Using defaults variables.
+
+```
+- hosts: servers
+  roles:
+      - { role: robedevops.ansible_docker_user }
+```
+
+Using  variables.
+
+```
+- hosts: servers
+  vars:
+    docker_user: myuser
+
+  roles:
+      - { role: robedevops.ansible_docker_user }
+```
+
+See example below for CentOS system.
+=================
 
 First Run
 ------------------------
@@ -68,3 +107,14 @@ manager                    : ok=4    changed=0    unreachable=0    failed=0
 ```
 
 It show there are no new changes.
+
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+Roberto Cardenas Isla - email: rcardenas20@gmail.com
