@@ -11,7 +11,7 @@ apt install python -y
 
 Role Variables
 --------------
-User defined on variables based on AWS EC2 ssh user. System load the user automatically based on ansible_distribution facts  
+User is defined on variables based on AWS EC2 ssh user. System load the user automatically based on ansible_distribution facts  
 
 ```
 # for AWS EC2 centos
@@ -33,21 +33,8 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters): 
 
-Using defaults variables.
-
 ```
 - hosts: servers
-  roles:
-      - { role: robedevops.ansible_docker_user }
-```
-
-Using  variables.
-
-```
-- hosts: servers
-  vars:
-    docker_user: myuser
-
   roles:
       - { role: robedevops.ansible_docker_user }
 ```
